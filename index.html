@@ -3,13 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="TN inc. — Achat, construction, location et gestion immobilière à Québec. Maisons et plexes." />
   <title>TN inc. | Immobilier Québec</title>
-  <link rel="icon" href="logo.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <meta name="description" id="metaDesc" content="TN inc. bâtit, possède et gère l'immobilier résidentiel à Québec : construction, propriété et gestion de maisons et de plexes." />
+  <meta name="theme-color" content="#0d1526" />
+  <link rel="canonical" href="https://nestormiron.github.io/tn-inc-website-/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="TN inc." />
+  <meta property="og:locale" id="ogLocale" content="fr_CA" />
+  <meta property="og:locale:alternate" content="en_CA" />
+  <meta property="og:url" content="https://nestormiron.github.io/tn-inc-website-/" />
+  <meta property="og:title" id="ogTitle" content="TN inc. | Immobilier Québec" />
+  <meta property="og:description" id="ogDesc" content="TN inc. bâtit, possède et gère l'immobilier résidentiel à Québec : construction, propriété et gestion de maisons et de plexes." />
+  <meta property="og:image" content="https://nestormiron.github.io/tn-inc-website-/images/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" id="ogImageAlt" content="Maison au crépuscule — TN inc., immobilier à Québec" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="twTitle" content="TN inc. | Immobilier Québec" />
+  <meta name="twitter:description" id="twDesc" content="TN inc. bâtit, possède et gère l'immobilier résidentiel à Québec : construction, propriété et gestion de maisons et de plexes." />
+  <meta name="twitter:image" content="https://nestormiron.github.io/tn-inc-website-/images/og.jpg" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <link rel="preload" href="fonts/cormorant-garamond-600.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/outfit-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" as="image" href="images/hero.webp" type="image/webp" media="(min-width: 701px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/hero-m.webp" type="image/webp" media="(max-width: 700px)" fetchpriority="high" />
+  <link rel="stylesheet" href="styles.css?v=5" />
 </head>
 <body>
   <!-- Skip -->
@@ -18,10 +37,10 @@
   <!-- Header -->
   <header class="site-header" id="header">
     <div class="container header-inner">
-      <a href="#hero" class="logo-link" aria-label="TN inc. accueil">
+      <a href="#hero" class="logo-link" data-i18n-aria="aria.home" aria-label="TN inc., accueil">
         <img src="logo.svg" alt="TN inc." class="logo-img" width="180" height="45" />
       </a>
-      <nav class="nav" id="nav" aria-label="Principal">
+      <nav class="nav" id="nav" data-i18n-aria="aria.nav" aria-label="Principal">
         <a href="#about" data-i18n="nav.about">À propos</a>
         <a href="#services" data-i18n="nav.services">Services</a>
         <a href="#portfolio" data-i18n="nav.portfolio">Portefeuille</a>
@@ -31,12 +50,12 @@
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="header-actions">
-        <div class="lang-toggle" role="group" aria-label="Language">
+        <div class="lang-toggle" role="group" data-i18n-aria="aria.lang" aria-label="Langue">
           <button type="button" class="lang-btn active" data-lang="fr" aria-pressed="true">FR</button>
           <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
         </div>
         <a href="tel:+14182622469" class="header-phone">418-262-2469</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <button class="nav-toggle" id="navToggle" aria-controls="nav" data-i18n-aria="aria.menu" aria-label="Menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -48,12 +67,15 @@
     <section class="hero" id="hero">
       <div class="hero-media" aria-hidden="true">
         <div class="hero-kenburns">
-          <img src="images/hero.jpg" alt="" class="hero-img" />
+          <picture>
+            <source media="(max-width: 700px)" srcset="images/hero-m.webp" type="image/webp" />
+            <img src="images/hero.webp" alt="" class="hero-img" width="1920" height="1080" fetchpriority="high" decoding="async" />
+          </picture>
         </div>
         <div class="hero-overlay"></div>
       </div>
       <div class="container hero-content">
-        <p class="eyebrow reveal" data-i18n="hero.eyebrow">Québec City · QC</p>
+        <p class="eyebrow reveal" data-i18n="hero.eyebrow">Québec · QC</p>
         <h1 class="reveal delay-1">
           <span data-i18n="hero.title1">On bâtit,</span><br />
           <span class="gold" data-i18n="hero.title2">on possède,</span><br />
@@ -83,10 +105,10 @@
       <div class="container about-grid">
         <div class="about-visual reveal">
           <div class="about-frame">
-            <img src="images/about-img.jpg" alt="" loading="lazy" />
+            <img src="images/about-img.webp" srcset="images/about-img-640.webp 640w, images/about-img-800.webp 800w, images/about-img.webp 1200w" sizes="(max-width: 1024px) 92vw, 42vw" width="1200" height="796" alt="Maison contemporaine, photo illustrative" data-i18n-alt="alt.about" loading="lazy" decoding="async" />
           </div>
           <div class="about-badge">
-            <span class="badge-num" data-count="4">0</span>
+            <span class="badge-num" data-count="4">4</span>
             <span class="badge-label" data-i18n="about.badge">Piliers d'expertise</span>
           </div>
         </div>
@@ -140,28 +162,28 @@
         </div>
         <div class="services-grid">
           <article class="service-card card-hover reveal">
-            <div class="service-img"><img src="images/construction-img.jpg" alt="" loading="lazy" /></div>
+            <div class="service-img"><img src="images/construction-img.webp" srcset="images/construction-img-640.webp 640w, images/construction-img-800.webp 800w, images/construction-img.webp 1200w" sizes="(max-width: 768px) 92vw, (max-width: 1024px) 46vw, 22vw" width="1200" height="802" alt="Chantier résidentiel, photo illustrative" data-i18n-alt="alt.construction" loading="lazy" decoding="async" /></div>
             <div class="service-body">
               <h3 data-i18n="services.const">Construction</h3>
               <p data-i18n="services.constDesc">Conception et réalisation de maisons et plexes adaptés au marché québécois.</p>
             </div>
           </article>
           <article class="service-card card-hover reveal delay-1">
-            <div class="service-img"><img src="images/svc-management.jpg" alt="" loading="lazy" /></div>
+            <div class="service-img"><img src="images/svc-management.webp" srcset="images/svc-management-640.webp 640w, images/svc-management-800.webp 800w, images/svc-management.webp 1200w" sizes="(max-width: 768px) 92vw, (max-width: 1024px) 46vw, 22vw" width="1200" height="900" alt="Immeuble résidentiel, photo illustrative" data-i18n-alt="alt.management" loading="lazy" decoding="async" /></div>
             <div class="service-body">
               <h3 data-i18n="services.mgmt">Gestion immobilière</h3>
               <p data-i18n="services.mgmtDesc">Administration complète : locataires, entretien, finances et conformité.</p>
             </div>
           </article>
           <article class="service-card card-hover reveal delay-2">
-            <div class="service-img"><img src="images/svc-rentals.jpg" alt="" loading="lazy" /></div>
+            <div class="service-img"><img src="images/svc-rentals.webp" srcset="images/svc-rentals-640.webp 640w, images/svc-rentals-800.webp 800w, images/svc-rentals.webp 1200w" sizes="(max-width: 768px) 92vw, (max-width: 1024px) 46vw, 22vw" width="1200" height="818" alt="Intérieur d'un logement, photo illustrative" data-i18n-alt="alt.rentals" loading="lazy" decoding="async" /></div>
             <div class="service-body">
               <h3 data-i18n="services.rent">Locations</h3>
               <p data-i18n="services.rentDesc">Maisons et logements soigneusement entretenus dans les meilleurs secteurs.</p>
             </div>
           </article>
           <article class="service-card card-hover reveal delay-3">
-            <div class="service-img"><img src="images/svc-investment.jpg" alt="" loading="lazy" /></div>
+            <div class="service-img"><img src="images/svc-investment.webp" srcset="images/svc-investment-640.webp 640w, images/svc-investment-800.webp 800w, images/svc-investment.webp 1200w" sizes="(max-width: 768px) 92vw, (max-width: 1024px) 46vw, 22vw" width="1200" height="900" alt="Immeuble de rapport, photo illustrative" data-i18n-alt="alt.investment" loading="lazy" decoding="async" /></div>
             <div class="service-body">
               <h3 data-i18n="services.inv">Investissement</h3>
               <p data-i18n="services.invDesc">Opportunités pour co-investir dans des actifs résidentiels performants.</p>
@@ -176,15 +198,16 @@
       <div class="container">
         <div class="section-head center">
           <p class="eyebrow reveal" data-i18n="portfolio.eyebrow">Nos immeubles</p>
-          <h2 class="reveal" data-i18n="portfolio.title">Portefeuille sélectionné</h2>
+          <h2 class="reveal" id="portfolioHeading" data-i18n="portfolio.title">Portefeuille sélectionné</h2>
           <p class="section-lead reveal" data-i18n="portfolio.lead">Maisons unifamiliales et quadruplexes dans les quartiers recherchés de la région de Québec.</p>
         </div>
-        <div class="filter-tabs reveal" role="tablist">
-          <button type="button" class="filter-btn active" data-filter="all" data-i18n="portfolio.all">Tous</button>
-          <button type="button" class="filter-btn" data-filter="house" data-i18n="portfolio.houses">Maisons</button>
-          <button type="button" class="filter-btn" data-filter="quad" data-i18n="portfolio.quads">Quadruplexes</button>
+        <div class="filter-tabs reveal" role="group" aria-labelledby="portfolioHeading">
+          <button type="button" class="filter-btn active" data-filter="all" data-i18n="portfolio.all" aria-pressed="true">Tous</button>
+          <button type="button" class="filter-btn" data-filter="house" data-i18n="portfolio.houses" aria-pressed="false">Maisons</button>
+          <button type="button" class="filter-btn" data-filter="quad" data-i18n="portfolio.quads" aria-pressed="false">Quadruplexes</button>
         </div>
         <div class="portfolio-grid" id="portfolioGrid"></div>
+        <noscript><p data-i18n="portfolio.noscript">Activez JavaScript pour afficher le portefeuille.</p></noscript>
       </div>
     </section>
 
@@ -193,19 +216,19 @@
       <div class="stats-bg" aria-hidden="true"></div>
       <div class="container stats-grid">
         <div class="stat reveal">
-          <span class="stat-num" data-count="150" data-suffix="+">0</span>
+          <span class="stat-num" data-count="150" data-suffix="+">150+</span>
           <span class="stat-label" data-i18n="stats.props">Unités gérées</span>
         </div>
         <div class="stat reveal delay-1">
-          <span class="stat-num" data-count="25" data-suffix="+">0</span>
+          <span class="stat-num" data-count="25" data-suffix="+">25+</span>
           <span class="stat-label" data-i18n="stats.years">Années d'expérience</span>
         </div>
         <div class="stat reveal delay-2">
-          <span class="stat-num" data-count="98" data-suffix="%">0</span>
+          <span class="stat-num" data-count="98" data-suffix="%">98%</span>
           <span class="stat-label" data-i18n="stats.occ">Taux d'occupation</span>
         </div>
         <div class="stat reveal delay-3">
-          <span class="stat-num" data-count="12" data-suffix="">0</span>
+          <span class="stat-num" data-count="12" data-suffix="">12</span>
           <span class="stat-label" data-i18n="stats.areas">Secteurs couverts</span>
         </div>
       </div>
@@ -260,7 +283,7 @@
           <a href="#contact" class="btn btn-gold reveal" data-i18n="inv.cta">Discuter d'un projet</a>
         </div>
         <div class="audience-visual reveal">
-          <img src="images/invest-img.jpg" alt="" loading="lazy" />
+          <img src="images/invest-img.webp" srcset="images/invest-img-640.webp 640w, images/invest-img-800.webp 800w, images/invest-img.webp 1200w" sizes="(max-width: 1024px) 92vw, 46vw" width="1200" height="902" alt="Clés sur des plans, photo illustrative" data-i18n-alt="alt.invest" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>
@@ -282,7 +305,7 @@
           <a href="#contact" class="btn btn-gold reveal" data-i18n="ten.cta">Faire une demande</a>
         </div>
         <div class="audience-visual reveal">
-          <img src="images/tenant-img.jpg" alt="" loading="lazy" />
+          <img src="images/tenant-img.webp" srcset="images/tenant-img-640.webp 640w, images/tenant-img-800.webp 800w, images/tenant-img.webp 1200w" sizes="(max-width: 1024px) 92vw, 46vw" width="1200" height="800" alt="Intérieur lumineux, photo illustrative" data-i18n-alt="alt.tenant" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>
@@ -304,7 +327,7 @@
           <a href="#contact" class="btn btn-gold reveal" data-i18n="own.cta">Obtenir une soumission</a>
         </div>
         <div class="audience-visual reveal">
-          <img src="images/manage-img.jpg" alt="" loading="lazy" />
+          <img src="images/manage-img.webp" srcset="images/manage-img-640.webp 640w, images/manage-img-800.webp 800w, images/manage-img.webp 1200w" sizes="(max-width: 1024px) 92vw, 46vw" width="1200" height="800" alt="Maison de ville, photo illustrative" data-i18n-alt="alt.owners" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>
@@ -315,7 +338,7 @@
         <div class="contact-info">
           <p class="eyebrow reveal" data-i18n="contact.eyebrow">Contact</p>
           <h2 class="reveal" data-i18n="contact.title">Parlons de votre projet</h2>
-          <p class="reveal" data-i18n="contact.lead">Québec City, QC — nous répondons rapidement par téléphone ou courriel.</p>
+          <p class="reveal" data-i18n="contact.lead">Québec — nous répondons rapidement par téléphone ou par courriel.</p>
           <div class="contact-details reveal">
             <a href="tel:+14182622469" class="contact-row">
               <span class="contact-icon" aria-hidden="true">
@@ -333,7 +356,7 @@
               <span class="contact-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
               </span>
-              <span data-i18n="contact.city">Québec City, QC</span>
+              <span data-i18n="contact.city">Québec (QC)</span>
             </div>
           </div>
         </div>
@@ -361,43 +384,69 @@
           </div>
           <button type="submit" class="btn btn-gold btn-block" data-i18n="contact.submit">Envoyer</button>
           <p class="form-note" data-i18n="contact.note">Ouvre votre client courriel — aucun envoi serveur.</p>
-          <p class="form-success" id="formSuccess" hidden data-i18n="contact.success">Merci — votre client courriel devrait s'ouvrir.</p>
+          <p class="form-success" id="formSuccess" hidden role="status" data-i18n="contact.success">Merci — votre client courriel devrait s'ouvrir.</p>
         </form>
       </div>
     </section>
   </main>
 
+  <!-- Credits -->
+  <section class="section credits" id="credits">
+    <div class="container">
+      <p class="eyebrow" data-i18n="credits.eyebrow">Sources</p>
+      <h2 data-i18n="credits.title">Crédits photographiques</h2>
+      <p class="section-lead" data-i18n="credits.lead">Photos à titre illustratif. Ce ne sont pas nécessairement les immeubles de TN inc. Les images Creative Commons ci-dessous exigent une attribution.</p>
+      <h3 data-i18n="credits.cc">Attribution exigée</h3>
+      <ul class="credits-list">
+        <li>Petit Jeano — «&nbsp;Maison rouge&nbsp;», Charlesbourg. <a href="https://commons.wikimedia.org/wiki/File:Maison_rouge_*_(53469637645).jpg" rel="noopener noreferrer">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/2.0/" rel="license noopener noreferrer">CC BY 2.0</a>.</li>
+        <li>Jeangagnon — «&nbsp;1146, avenue De Salaberry&nbsp;», Québec. <a href="https://commons.wikimedia.org/wiki/File:1146,_avenue_De_Salaberry.jpg" rel="noopener noreferrer">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license noopener noreferrer">CC BY-SA 3.0</a>.</li>
+        <li>Jeangagnon — «&nbsp;761-771, rue du Couvent&nbsp;», Montréal. <a href="https://commons.wikimedia.org/wiki/File:761-771,_rue_du_Couvent.jpg" rel="noopener noreferrer">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license noopener noreferrer">CC BY-SA 3.0</a>.</li>
+        <li>Jeangagnon — «&nbsp;823-833, rue du Couvent&nbsp;», Montréal. <a href="https://commons.wikimedia.org/wiki/File:823-833_rue_du_Couvent.jpg" rel="noopener noreferrer">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener noreferrer">CC BY-SA 4.0</a>.</li>
+        <li>Jeangagnon — «&nbsp;5462-5478, rue Saint-Denis&nbsp;», Montréal. <a href="https://commons.wikimedia.org/wiki/File:5462-5478,_rue_Saint-Denis.jpg" rel="noopener noreferrer">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license noopener noreferrer">CC BY-SA 3.0</a>.</li>
+        <li>Andre Carrotflower — «&nbsp;Montreal (Little Italy)&nbsp;». <a href="https://commons.wikimedia.org/wiki/File:20181014_-_14_-_Montreal_(Little_Italy).jpg" rel="noopener noreferrer">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener noreferrer">CC BY-SA 4.0</a>.</li>
+        <li>Andre Carrotflower — «&nbsp;Montreal (Plateau)&nbsp;». <a href="https://commons.wikimedia.org/wiki/File:20181013_-_37_-_Montreal_(Plateau).jpg" rel="noopener noreferrer">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener noreferrer">CC BY-SA 4.0</a>.</li>
+      </ul>
+      <h3 data-i18n="credits.other">Autres sources illustratives</h3>
+      <p class="credits-note" data-i18n="credits.note">Unsplash (licence Unsplash) et Pexels (licence Pexels). L'attribution n'est pas exigée. CC0 : Wilfredor, « 178 Rue Aberdeen », Québec.</p>
+      <ul class="credits-list credits-compact">
+        <li>Unsplash — photo-1570129477492-45c003edd2be, photo-1605276374104-dee2a0ed3cd6, photo-1568605114967-8130f3a36994, photo-1600047509358-9dc75507daeb, photo-1600566753190-17f0baa2a6c3, photo-1600585154526-990dced4db0d, photo-1600596542815-ffad4c1539a9, photo-1600585152915-d208bec867a1, photo-1560518883-ce09059eeffa, photo-1560184897-ae75f418493e, photo-1600585154340-be6161a56a0c, photo-1574362848149-11496d93a7c7, photo-1460317442991-0ec209397118.</li>
+        <li>Pexels — Binyamin Mellish (106399, 1396122), Pixabay (280222, 259950), Expect Best (323780), Emre Can Acer (2079234), Tobias Bjørkli (2119713), Viaceslav Kat (1643389).</li>
+        <li>Wilfredor — <a href="https://commons.wikimedia.org/wiki/File:178_Rue_Aberdeen.jpg" rel="noopener noreferrer">178 Rue Aberdeen</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license noopener noreferrer">CC0</a>.</li>
+      </ul>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="logo.svg" alt="TN inc." class="footer-logo" width="160" height="40" />
+        <img src="logo-light.svg" alt="TN inc." class="footer-logo" width="230" height="64" />
         <p data-i18n="footer.tag">Immobilier résidentiel à Québec — maisons et plexes.</p>
       </div>
       <div class="footer-links">
-        <h4 data-i18n="footer.explore">Explorer</h4>
+        <p class="footer-heading" data-i18n="footer.explore">Explorer</p>
         <a href="#about" data-i18n="nav.about">À propos</a>
         <a href="#services" data-i18n="nav.services">Services</a>
         <a href="#portfolio" data-i18n="nav.portfolio">Portefeuille</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </div>
       <div class="footer-links">
-        <h4 data-i18n="footer.audiences">Publics</h4>
+        <p class="footer-heading" data-i18n="footer.audiences">Publics</p>
         <a href="#tenants" data-i18n="nav.tenants">Locataires</a>
         <a href="#investors" data-i18n="nav.investors">Investisseurs</a>
         <a href="#owners" data-i18n="nav.owners">Propriétaires</a>
       </div>
       <div class="footer-contact">
-        <h4 data-i18n="footer.reach">Nous joindre</h4>
+        <p class="footer-heading" data-i18n="footer.reach">Nous joindre</p>
         <a href="tel:+14182622469">418-262-2469</a>
         <a href="mailto:nestormiron@gmail.com">nestormiron@gmail.com</a>
-        <p data-i18n="contact.city">Québec City, QC</p>
+        <p data-i18n="contact.city">Québec (QC)</p>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <p>&copy; <span id="year"></span> TN inc. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
-        <p class="photo-note" data-i18n="footer.photos">Photos à titre indicatif.</p>
+        <p>&copy; <span id="year">2026</span> TN inc. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+        <p class="photo-note"><a href="#credits" data-i18n="footer.credits">Crédits photographiques</a></p>
       </div>
     </div>
   </footer>
@@ -406,8 +455,8 @@
   <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
     <div class="modal-backdrop" data-close></div>
     <div class="modal-panel">
-      <button type="button" class="modal-close" data-close aria-label="Close">&times;</button>
-      <div class="modal-media"><img id="modalImg" src="" alt="" /></div>
+      <button type="button" class="modal-close" data-close data-i18n-aria="aria.close" aria-label="Fermer">&times;</button>
+      <div class="modal-media"><img id="modalImg" src="" alt="" width="1200" height="800" decoding="async" /></div>
       <div class="modal-body">
         <p class="modal-type" id="modalType"></p>
         <h3 id="modalTitle"></h3>
@@ -419,6 +468,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
