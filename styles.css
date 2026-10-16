@@ -147,6 +147,12 @@ h3 { font-size: 1.35rem; color: var(--navy-2); margin-bottom: 0.5rem; }
     linear-gradient(to top, rgba(13,21,38,0.7) 0%, transparent 40%);
 }
 .hero-content { position: relative; z-index: 2; padding: 4rem 0 6rem; max-width: 720px; }
+.hero h1 {
+  line-height: 1.28;
+  letter-spacing: 0;
+  overflow: visible;
+  padding-top: 0.06em;
+}
 .hero-lead {
   font-size: 1.1rem; color: rgba(247,244,238,0.82); margin: 1.25rem 0 1.15rem;
   max-width: min(38rem, 100%); overflow-wrap: break-word;

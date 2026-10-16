@@ -200,8 +200,17 @@
   let lang = "fr";
   let currentFilter = "all";
 
+  function lookup(key) {
+    const current = I18N[lang] && I18N[lang][key];
+    if (typeof current === "string" && current !== "") return current;
+    const fallback = I18N.fr && I18N.fr[key];
+    if (typeof fallback === "string" && fallback !== "") return fallback;
+    return null;
+  }
+
   function t(key) {
-    return (I18N[lang] && I18N[lang][key]) || I18N.fr[key] || key;
+    const val = lookup(key);
+    return val == null ? "" : val;
   }
 
   function formatPrice(n) {
@@ -214,7 +223,8 @@
     document.documentElement.lang = lang;
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
-      const val = t(key);
+      const val = lookup(key);
+      if (val == null) return;
       if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
         el.placeholder = val;
       } else if (el.tagName === "OPTION") {
