@@ -1,0 +1,42 @@
+Photo credits — TN inc. website
+Photos à titre indicatif / Photos for illustration purposes.
+Licences: Unsplash License (unsplash.com/license), Pexels License (pexels.com/license),
+Wikimedia Commons CC BY / CC BY-SA / CC0 as noted (attribution required for CC BY/BY-SA;
+CC BY-SA: https://creativecommons.org/licenses/by-sa/4.0/).
+Unsplash photographer names could not be retrieved (unsplash.com blocks automated access);
+the photo IDs below identify each image.
+
+=== Single-family houses ===
+h01.jpg — Unsplash photo-1570129477492-45c003edd2be
+h02.jpg — Pexels 106399 — Binyamin Mellish
+h03.jpg — Unsplash photo-1605276374104-dee2a0ed3cd6
+h04.jpg — Unsplash photo-1568605114967-8130f3a36994
+h05.jpg — Wikimedia Commons "Maison rouge * (53469637645).jpg" (Charlesbourg) — Petit Jeano — CC BY 2.0
+h06.jpg — Unsplash photo-1600047509358-9dc75507daeb
+h07.jpg — Pexels 1396122 — Binyamin Mellish
+h08.jpg — Pexels 280222 — Pixabay
+h09.jpg — Wikimedia Commons "1146, avenue De Salaberry.jpg" (Québec) — Jeangagnon — CC BY-SA 3.0
+h10.jpg — Unsplash photo-1600566753190-17f0baa2a6c3
+
+=== Quadruplexes / plexes ===
+q01.jpg — Unsplash photo-1574362848149-11496d93a7c7
+q02.jpg — Wikimedia Commons "761-771, rue du Couvent.jpg" (Montréal) — Jeangagnon — CC BY-SA 3.0
+q03.jpg — Unsplash photo-1460317442991-0ec209397118
+q04.jpg — Pexels 323780 — Expect Best
+q05.jpg — Wikimedia Commons "823-833 rue du Couvent.jpg" (Montréal) — Jeangagnon — CC BY-SA 4.0
+q06.jpg — Wikimedia Commons "20181014 - 14 - Montreal (Little Italy).jpg" — Andre Carrotflower — CC BY-SA 4.0
+q07.jpg — Wikimedia Commons "178 Rue Aberdeen.jpg" (Québec) — Wilfredor — CC0
+q08.jpg — Pexels 2079234 — Emre Can Acer
+q09.jpg — Pexels 259950 — Pixabay
+q10.jpg — Pexels 2119713 — Tobias Bjørkli
+
+=== Section images ===
+hero.jpg — Unsplash photo-1600585154526-990dced4db0d
+about-img.jpg — Unsplash photo-1600596542815-ffad4c1539a9
+construction-img.jpg (Services) — Pexels 1643389 — Viaceslav Kat
+svc-management.jpg (Services) — Wikimedia Commons "5462-5478, rue Saint-Denis.jpg" — Jeangagnon — CC BY-SA 3.0
+svc-rentals.jpg (Services) — Unsplash photo-1600585152915-d208bec867a1
+svc-investment.jpg (Services) — Wikimedia Commons "20181013 - 37 - Montreal (Plateau).jpg" — Andre Carrotflower — CC BY-SA 4.0
+invest-img.jpg (Investors) — Unsplash photo-1560518883-ce09059eeffa
+tenant-img.jpg (Tenants) — Unsplash photo-1560184897-ae75f418493e
+manage-img.jpg (Owners) — Unsplash photo-1600585154340-be6161a56a0c
