@@ -1,5 +1,6 @@
 Photo credits — TN inc. website
-Photos à titre indicatif / Photos for illustration purposes.
+Photos à titre illustratif / Photos for illustration purposes.
+The site serves responsive WebP derivatives of these sources.
 Licences: Unsplash License (unsplash.com/license), Pexels License (pexels.com/license),
 Wikimedia Commons CC BY / CC BY-SA / CC0 as noted (attribution required for CC BY/BY-SA;
 CC BY-SA: https://creativecommons.org/licenses/by-sa/4.0/).
